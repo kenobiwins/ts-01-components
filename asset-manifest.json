@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ts-01-components/static/css/main.c3d5249d.css",
+    "main.js": "/ts-01-components/static/js/main.10073704.js",
+    "index.html": "/ts-01-components/index.html",
+    "main.c3d5249d.css.map": "/ts-01-components/static/css/main.c3d5249d.css.map",
+    "main.10073704.js.map": "/ts-01-components/static/js/main.10073704.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3d5249d.css",
+    "static/js/main.10073704.js"
+  ]
+}
