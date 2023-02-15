@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface IId {
+  id: string | undefined;
+}
+
 export const Table = styled.table`
   width: 100%;
   text-align: center;
@@ -23,9 +27,11 @@ export const TableHeadItem = styled.th`
   }
 `;
 
-export const TableRow = styled.tr`
+export const TableRow = styled.tr<IId>`
   background-color: ${p =>
-    p.id % 2 !== 0 ? p.theme.colors.white : p.theme.colors.backgroundSecondary};
+    Number(p.id) % 2 !== 0
+      ? p.theme.colors.white
+      : p.theme.colors.backgroundSecondary};
   transition: transform 250ms linear;
 
   :hover,

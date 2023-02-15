@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface IProps {
+  username?: boolean;
+}
+
 export const ProfileCard = styled.div`
   // max-width:300px;
   box-shadow: 2px 2px 6px 0px rgba(97, 90, 90, 0.66);
@@ -21,7 +25,7 @@ export const ProfileDescription = styled.div`
   }
 `;
 
-export const ProfileDescriptionInfo = styled.p`
+export const ProfileDescriptionInfo = styled.p<IProps>`
   font-size: ${p => (p.username ? p.theme.fontSizes.m : p.theme.fontSizes.s)};
   font-weight: ${p =>
     p.username ? p.theme.fontWeights.bold : p.theme.fontWeights.normal};

@@ -1,10 +1,13 @@
 import { FriendsItemStyled, Status } from './FriendsListItem.styled';
 import { RiRadioButtonLine } from 'react-icons/ri';
+import { IFriend } from './FriendList';
 
-export const FriendsListItem = ({ avatar, name, isOnline }) => {
+type friendPick = Pick<IFriend, 'avatar' | 'name' | 'isOnline'>;
+
+export const FriendsListItem = ({ avatar, name, isOnline }: friendPick) => {
   return (
     <FriendsItemStyled>
-      <Status checkOnline={isOnline}>
+      <Status isOnline={isOnline}>
         <RiRadioButtonLine />
         {isOnline ? 'online' : 'offline'}
       </Status>

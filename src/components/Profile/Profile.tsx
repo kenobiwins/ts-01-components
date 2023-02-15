@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   ProfileCard,
   ProfileDescription,
@@ -7,18 +7,27 @@ import {
   ProfileStatsInfo,
   Chip,
 } from './Profile.styled';
+
+interface IProps {
+  username: string;
+  tag: string;
+  location: string;
+  avatar: string;
+  stats: { likes: number; views: number; followers: number };
+}
+
 export const Profile = ({
   username,
   tag,
   location,
   stats: { likes, views, followers },
   avatar,
-}) => {
+}: IProps) => {
   return (
     <ProfileCard>
       <ProfileDescription>
         <img src={avatar} alt={`${username} avatar`} />
-        <ProfileDescriptionInfo username>{username}</ProfileDescriptionInfo>
+        <ProfileDescriptionInfo username>:{username}</ProfileDescriptionInfo>
         <ProfileDescriptionInfo>{`@${tag}`}</ProfileDescriptionInfo>
         <ProfileDescriptionInfo>{location}</ProfileDescriptionInfo>
       </ProfileDescription>
@@ -41,14 +50,14 @@ export const Profile = ({
   );
 };
 
-Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    likes: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    followers: PropTypes.number.isRequired,
-  }),
-};
+// Profile.propTypes = {
+//   username: PropTypes.string.isRequired,
+//   tag: PropTypes.string.isRequired,
+//   location: PropTypes.string.isRequired,
+//   avatar: PropTypes.string.isRequired,
+//   stats: PropTypes.shape({
+//     likes: PropTypes.number.isRequired,
+//     views: PropTypes.number.isRequired,
+//     followers: PropTypes.number.isRequired,
+//   }),
+// };
